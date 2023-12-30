@@ -12,7 +12,7 @@
   <!-- Favicons -->
   <!-- <link href="assets/img/favicon.png" rel="icon"> -->
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="shortcut icon" type="x-icon" href="assets/img/logo.png">
+  <link rel="shortcut icon" type="x-icon" href="assets/img/logo2.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -395,6 +395,7 @@
       </div>
 
       <div class="col-lg-6 contact-form">
+        <form action="https://formspree.io/f/mrgngeqj" method="post" id="myForm">
         <div class="row">
             <div class="col-md-6 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Uw Naam" required>
@@ -402,52 +403,69 @@
             <div class="col-md-6 form-group">
                 <input type="email" class="form-control" name="email" id="email" placeholder="Uw Email" required>
             </div>
+            <div class="col-md-6 form-group">
+                <input type="tel" class="form-control" name="telefoonnummer" id="telefoonnummer" placeholder="Uw Telefoonnummer" required>
+            </div>
+            <div class="col-md-6 form-group">
+                <input type="text" class="form-control" name="woonplaats" id="woonplaats" placeholder="Uw Woonplaats" required>
+            </div>
             <div class="col-md-12 form-group">
                 <label style="font-weight: bold;">Offerte aanvragen voor</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="services[]" value="Vloer Egaliseren" id="service1">
+                    <input class="form-check-input" type="checkbox" name="services[1]" value="Vloer Egaliseren" id="service1">
                     <label class="form-check-label" for="service1">Vloer Egaliseren</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="services[]" value="Egaline Verpompen" id="service2">
+                    <input class="form-check-input" type="checkbox" name="services[2]" value="Egaline Verpompen" id="service2">
                     <label class="form-check-label" for="service2">Egaline Verpompen</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="services[]" value="Lijm Verwijderen" id="service3">
+                    <input class="form-check-input" type="checkbox" name="services[3]" value="Lijm Verwijderen" id="service3">
                     <label class="form-check-label" for="service3">Lijm Verwijderen</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="services[]" value="Parketvloer Verwijderen" id="service4">
+                    <input class="form-check-input" type="checkbox" name="services[4]" value="Parketvloer Verwijderen" id="service4">
                     <label class="form-check-label" for="service4">Parketvloer Verwijderen</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="services[]" value="Siergrindvloer Verwijderen" id="service5">
+                    <input class="form-check-input" type="checkbox" name="services[5]" value="Siergrindvloer Verwijderen" id="service5">
                     <label class="form-check-label" for="service5">Siergrindvloer Verwijderen</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="services[]" value="Houten Vloer Verwijderen" id="service6">
+                    <input class="form-check-input" type="checkbox" name="services[6]" value="Houten Vloer Verwijderen" id="service6">
                     <label class="form-check-label" for="service6">Houten Vloer Verwijderen</label>
                 </div>
             </div>
             <div class="col-md-12 form-group">
                 <label style="font-weight: bold;">Vloer locatie</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="floorLocation[]" value="Begane grond" id="floorLocation1">
+                    <input class="form-check-input" type="checkbox" name="floorLocation[1]" value="Begane grond" id="floorLocation1">
                     <label class="form-check-label" for="floorLocation1">Begane grond</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="floorLocation[]" value="Verdieping" id="floorLocation2">
+                    <input class="form-check-input" type="checkbox" name="floorLocation[2]" value="Verdieping" id="floorLocation2">
                     <label class="form-check-label" for="floorLocation2">Verdieping</label>
                 </div>
             </div>
             <div class="col-md-12 form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Bericht" required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Bericht" style="resize: vertical;" required></textarea>
             </div>
             <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Verstuur bericht</button>
+                <button type="submit" class="btn btn-primary" onclick="submitForm()">Verstuur bericht</button>
             </div>
         </div>
     </div>
+  </form>
+
+  <script>
+    function submitForm() {
+    // Leeg het formulier
+    document.getElementById("myForm").submit();
+
+    // Dien het formulier handmatig in
+    document.getElementById("myForm").reset();
+}
+    </script>
 
   </div>
 </section><!-- End Contact Section -->
